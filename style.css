@@ -1,0 +1,96 @@
+html {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='32' height='32' viewBox='0 0 48 48'%3E%3ClinearGradient id='grad1' x1='1.018' x2='17.884' y1='-10.059' y2='-47.631' gradientTransform='rotate(-24.536 130.033 -37.036)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23962aff'/%3E%3Cstop offset='0.781' stop-color='%23be85ff'/%3E%3Cstop offset='1' stop-color='%23c99fff'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23grad1)' d='M36.194,24.693L13.835,4.878c-1.274-1.129-3.282-0.212-3.263,1.49l0.325,29.866c0.018,1.688,2.019,2.566,3.274,1.437l5.893-5.299l4.377,9.588c0.45,0.986,1.614,1.42,2.6,0.97l3.57-1.63c0.986-0.45,1.42-1.614,0.97-2.6L27.2,29.108l7.938-1.001C36.812,27.897,37.456,25.812,36.194,24.693z'/%3E%3C/svg%3E"), auto;
+}
+
+   
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #020617;
+    color: #DCDDDE;
+}
+
+@font-face {
+  font-family: 'TheoryGank';
+  src: url('Theory-Gank.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.theory-gank {
+  font-family: 'Theory Gank', sans-serif;
+}
+
+
+.logo-font {
+  font-family: 'TheoryGank', sans-serif;
+  color: #8A63D2;
+}
+
+
+a, button {
+    /* Ensure interactive elements also use the custom cursor */
+    cursor: inherit;
+}
+
+.animated-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -10;
+    background: linear-gradient(to bottom, #0c1a3b, #020617);
+    overflow: hidden;
+}
+
+/* Night Mode Elements */
+@keyframes move-stars { from { transform: translateY(0); } to { transform: translateY(-1000px); } }
+.stars { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 200%; display: block; }
+#stars1 { background-image: radial-gradient(1px, rgba(255, 255, 255, 0.8) 1px, transparent 1px); background-size: 150px 150px; animation: move-stars 200s linear infinite; }
+
+@keyframes shooting-star-anim {
+    0% { transform: translateX(300px) translateY(-300px) scale(0.5); opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(-300px) translateY(300px) scale(1); opacity: 0; }
+}
+.shooting-star {
+    position: absolute; top: 50%; left: 50%; width: 3px; height: 3px;
+    background: linear-gradient(-45deg, #fff, rgba(255, 255, 255, 0));
+    border-radius: 999px; filter: drop-shadow(0 0 6px #fff);
+    animation: shooting-star-anim 10s ease-in-out infinite;
+}
+.shooting-star:nth-child(1) { top: 10%; left: 40%; animation-delay: 1s; }
+.shooting-star:nth-child(2) { top: 80%; left: 60%; animation-delay: 4s; animation-duration: 8s; }
+
+/* Planets */
+.planet { position: absolute; border-radius: 50%; }
+.planet1 { /* Saturn-like */
+    width: 100px; height: 100px;
+    top: 15%; right: 10%;
+    background: radial-gradient(circle, #f9d4a3, #e7a65f);
+    box-shadow: 0 0 40px #f9d4a3;
+}
+.planet1::before { /* Ring */
+    content: ''; position: absolute;
+    top: 50%; left: 50%;
+    width: 180%; height: 180%;
+    border: 4px solid rgba(249, 212, 163, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotateX(70deg);
+}
+
+.planet2 { /* Mars-like */
+     width: 50px; height: 50px;
+     bottom: 10%; left: 15%;
+     background: radial-gradient(circle, #ff8c69, #e55a34);
+     box-shadow: 0 0 20px #ff8c69;
+}
+
+/* General Component Styles */
+.glass-effect { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.text-accent { color: #8A63D2; }
+.bg-accent { background-color: #704cb5; }
+.bg-accent:hover { background-color: #8A63D2; }
+.skill-card, .project-card { background-color: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.07); transition: background-color 0.3s, transform 0.3s; }
+.skill-card:hover, .project-card:hover { background-color: rgba(30, 41, 59, 0.7); transform: translateY(-5px); }
+.section-title { color: #FFFFFF; }
+.text-primary { color: #DCDDDE; }
+.text-secondary { color: #94a3b8; }
+.footer { background-color: rgba(15, 23, 42, 0.5); border-top: 1px solid rgba(255, 255, 255, 0.07); }
